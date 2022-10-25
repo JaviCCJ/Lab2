@@ -1,6 +1,6 @@
 syntax = "proto3";
 package grpc;
-option go_package = "Sistemas_Distribuidos/Lab_2/proto";
+option go_package = "github.com/JaviCCJ/Lab2";
 
 
 message mensaje_combine{
