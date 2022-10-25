@@ -1,0 +1,35 @@
+syntax = "proto3";
+package grpc;
+option go_package = "Sistemas_Distribuidos/Lab_2/proto";
+
+
+message mensaje_combine{
+    string tipo = 1;
+    int32 id = 2;
+    string data = 3;
+}
+
+message mensaje_rebeldes{
+    string tipo = 1;
+}
+
+message pedido_data{
+    int32 id = 1;
+    string data = 2;
+}
+
+message conf{
+    string conf = 1;
+}
+
+service rebeldes{
+    rpc pedirInfo(mensaje_rebeldes) returns (stream pedido_data);
+}
+
+service combine{
+    rpc subirInfo(mensaje_combine) returns (conf);
+}
+
+service nameData{
+    rpc sacarInfo (pedido_data) returns (pedido_data);
+}
